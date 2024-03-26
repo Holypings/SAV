@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace sav
 {
@@ -117,6 +118,11 @@ namespace sav
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ajouterticket_Load(object sender, EventArgs e)
         {
 
         }

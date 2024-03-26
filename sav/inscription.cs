@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace sav
 {
@@ -29,6 +30,11 @@ namespace sav
             this.Hide();
             accueil f1 = new accueil();
             f1.Show();
+        }
+
+        private void inscription_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
