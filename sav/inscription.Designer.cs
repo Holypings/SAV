@@ -31,25 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inscription));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
+            this.txtPasword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(342, 503);
+            this.button2.Location = new System.Drawing.Point(325, 568);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 41);
             this.button2.TabIndex = 66;
@@ -60,7 +60,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(195, 503);
+            this.button1.Location = new System.Drawing.Point(178, 568);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 41);
             this.button1.TabIndex = 65;
@@ -68,26 +68,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(275, 418);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
-            this.textBox3.TabIndex = 61;
+            this.txtEmail.Location = new System.Drawing.Point(275, 355);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(206, 20);
+            this.txtEmail.TabIndex = 61;
             // 
-            // dateTimePicker1
+            // txtUsername
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(275, 358);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(206, 20);
-            this.dateTimePicker1.TabIndex = 60;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(275, 297);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 59;
+            this.txtUsername.Location = new System.Drawing.Point(275, 297);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(206, 20);
+            this.txtUsername.TabIndex = 59;
             // 
             // label7
             // 
@@ -95,23 +88,11 @@
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(198, 418);
+            this.label7.Location = new System.Drawing.Point(198, 355);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 23);
             this.label7.TabIndex = 54;
             this.label7.Text = "Email";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(102, 355);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 23);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "Date de naissance";
             // 
             // label5
             // 
@@ -170,34 +151,54 @@
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtLName
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 239);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 68;
+            this.txtLName.Location = new System.Drawing.Point(275, 239);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(206, 20);
+            this.txtLName.TabIndex = 68;
             // 
-            // textBox4
+            // txtFName
             // 
-            this.textBox4.Location = new System.Drawing.Point(275, 185);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 20);
-            this.textBox4.TabIndex = 69;
+            this.txtFName.Location = new System.Drawing.Point(275, 185);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(206, 20);
+            this.txtFName.TabIndex = 69;
+            // 
+            // txtPasword
+            // 
+            this.txtPasword.Location = new System.Drawing.Point(275, 414);
+            this.txtPasword.Name = "txtPasword";
+            this.txtPasword.Size = new System.Drawing.Size(206, 20);
+            this.txtPasword.TabIndex = 71;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.AutoSize = true;
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPassword.Location = new System.Drawing.Point(138, 411);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(111, 23);
+            this.txtPassword.TabIndex = 70;
+            this.txtPassword.Text = "Mot de passe";
+            this.txtPassword.Click += new System.EventHandler(this.label2_Click);
             // 
             // inscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 622);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(634, 735);
+            this.Controls.Add(this.txtPasword);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtFName);
+            this.Controls.Add(this.txtLName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -217,17 +218,17 @@
         #endregion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.TextBox txtPasword;
+        private System.Windows.Forms.Label txtPassword;
     }
 }

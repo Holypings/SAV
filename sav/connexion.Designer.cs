@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(connexion));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPseudo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,12 +51,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txtPseudo
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 59;
+            this.txtPseudo.Location = new System.Drawing.Point(254, 190);
+            this.txtPseudo.Name = "txtPseudo";
+            this.txtPseudo.Size = new System.Drawing.Size(206, 20);
+            this.txtPseudo.TabIndex = 59;
             // 
             // label4
             // 
@@ -75,11 +75,11 @@
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(188, 185);
+            this.label3.Location = new System.Drawing.Point(160, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 23);
+            this.label3.Size = new System.Drawing.Size(68, 23);
             this.label3.TabIndex = 50;
-            this.label3.Text = "Mail";
+            this.label3.Text = "Pseudo";
             // 
             // label1
             // 
@@ -102,12 +102,12 @@
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(254, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 68;
+            this.txtPassword.Location = new System.Drawing.Point(254, 245);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(206, 20);
+            this.txtPassword.TabIndex = 68;
             // 
             // label2
             // 
@@ -126,10 +126,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 459);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPseudo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -147,12 +147,12 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPseudo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
     }
 }
