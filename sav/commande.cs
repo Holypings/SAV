@@ -100,5 +100,10 @@ namespace sav
             ajouterticket f3 = new ajouterticket();
             f3.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

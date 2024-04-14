@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace sav
 {
     public partial class ajouterticket : Form
     {
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
         public ajouterticket()
         {
             InitializeComponent();

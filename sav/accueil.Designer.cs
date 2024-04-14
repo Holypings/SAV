@@ -48,9 +48,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comptebtn = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -59,7 +56,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -76,7 +73,7 @@
             this.commandebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.commandebtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commandebtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.commandebtn.Location = new System.Drawing.Point(55, 333);
+            this.commandebtn.Location = new System.Drawing.Point(55, 367);
             this.commandebtn.Name = "commandebtn";
             this.commandebtn.Size = new System.Drawing.Size(136, 47);
             this.commandebtn.TabIndex = 1;
@@ -118,7 +115,7 @@
             this.dashbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dashbtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.dashbtn.Location = new System.Drawing.Point(55, 262);
+            this.dashbtn.Location = new System.Drawing.Point(55, 296);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Size = new System.Drawing.Size(136, 47);
             this.dashbtn.TabIndex = 7;
@@ -312,40 +309,6 @@
             this.label15.TabIndex = 27;
             this.label15.Text = "Juin";
             // 
-            // comptebtn
-            // 
-            this.comptebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comptebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comptebtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comptebtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.comptebtn.Location = new System.Drawing.Point(55, 411);
-            this.comptebtn.Name = "comptebtn";
-            this.comptebtn.Size = new System.Drawing.Size(136, 47);
-            this.comptebtn.TabIndex = 5;
-            this.comptebtn.Text = "Compte";
-            this.comptebtn.UseVisualStyleBackColor = false;
-            this.comptebtn.Click += new System.EventHandler(this.button1_Click_3);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(1117, 96);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(196, 25);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Bienvenue  username";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(1327, 82);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(44, 42);
-            this.pictureBox9.TabIndex = 29;
-            this.pictureBox9.TabStop = false;
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -421,14 +384,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.Window;
+            this.label17.Location = new System.Drawing.Point(21, 165);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(208, 20);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Application SAV - Administrateur";
+            // 
             // accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1419, 713);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -451,7 +425,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dashbtn);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.comptebtn);
             this.Controls.Add(this.connectbtn);
             this.Controls.Add(this.ajtcomptebtn);
             this.Controls.Add(this.pictureBox2);
@@ -463,7 +436,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.accueil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -506,9 +478,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button comptebtn;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label17;
     }
 }
 

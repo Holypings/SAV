@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(commande));
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dashbtn = new System.Windows.Forms.Button();
             this.connectbtn = new System.Windows.Forms.Button();
             this.ajtcomptebtn = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comptebtn = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -53,20 +51,23 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Réference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(932, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(346, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // dashbtn
             // 
@@ -74,7 +75,7 @@
             this.dashbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dashbtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.dashbtn.Location = new System.Drawing.Point(55, 263);
+            this.dashbtn.Location = new System.Drawing.Point(55, 297);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Size = new System.Drawing.Size(136, 47);
             this.dashbtn.TabIndex = 15;
@@ -116,7 +117,7 @@
             this.commandebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.commandebtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commandebtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.commandebtn.Location = new System.Drawing.Point(55, 334);
+            this.commandebtn.Location = new System.Drawing.Point(55, 368);
             this.commandebtn.Name = "commandebtn";
             this.commandebtn.Size = new System.Drawing.Size(136, 47);
             this.commandebtn.TabIndex = 9;
@@ -141,7 +142,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(762, 97);
+            this.label2.Location = new System.Drawing.Point(1263, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 23);
             this.label2.TabIndex = 20;
@@ -246,25 +247,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(298, 283);
+            this.checkBox1.Location = new System.Drawing.Point(320, 283);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 30;
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // comptebtn
-            // 
-            this.comptebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comptebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comptebtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comptebtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.comptebtn.Location = new System.Drawing.Point(55, 412);
-            this.comptebtn.Name = "comptebtn";
-            this.comptebtn.Size = new System.Drawing.Size(136, 47);
-            this.comptebtn.TabIndex = 13;
-            this.comptebtn.Text = "Compte";
-            this.comptebtn.UseVisualStyleBackColor = false;
-            this.comptebtn.Click += new System.EventHandler(this.comptebtn_Click);
             // 
             // pictureBox6
             // 
@@ -277,7 +264,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::sav.Properties.Resources.edit;
-            this.pictureBox5.Location = new System.Drawing.Point(731, 96);
+            this.pictureBox5.Location = new System.Drawing.Point(1232, 98);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -337,12 +324,71 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Application SAV - Administrateur";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Réference,
+            this.Etat,
+            this.Prix,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView1.Location = new System.Drawing.Point(354, 268);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(878, 413);
+            this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Réference
+            // 
+            this.Réference.HeaderText = "Réference";
+            this.Réference.Name = "Réference";
+            // 
+            // Etat
+            // 
+            this.Etat.HeaderText = "Etat";
+            this.Etat.Name = "Etat";
+            // 
+            // Prix
+            // 
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Entrée au SAV";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Client";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Produit";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Réparabilité";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Tag";
+            this.Column5.Name = "Column5";
+            // 
             // commande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1419, 713);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox6);
@@ -360,13 +406,11 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.dashbtn);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.comptebtn);
             this.Controls.Add(this.connectbtn);
             this.Controls.Add(this.ajtcomptebtn);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.commandebtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "commande";
@@ -379,14 +423,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button dashbtn;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button connectbtn;
@@ -408,7 +451,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button comptebtn;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Réference;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Etat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
