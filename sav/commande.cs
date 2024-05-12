@@ -11,14 +11,15 @@ using MySql.Data.MySqlClient;
 
 namespace sav
 {
-   
-  
+
+
     public partial class commande : Form
     {
-        
+
         public commande()
         {
             InitializeComponent();
+            LoadInitialData();
             commandebtn.FlatStyle = FlatStyle.Flat;
             commandebtn.FlatAppearance.BorderSize = 0;
             ajtcomptebtn.FlatStyle = FlatStyle.Flat;
@@ -27,7 +28,33 @@ namespace sav
             connectbtn.FlatAppearance.BorderSize = 0;
             dashbtn.FlatStyle = FlatStyle.Flat;
             dashbtn.FlatAppearance.BorderSize = 0;
-            
+
+        }
+
+        private void LoadInitialData()
+        {
+            string connectionString = "datasource=localhost;port=3306;username=root;password=";
+            string selectQuery = "SELECT * FROM sav.ticket";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(selectQuery, con))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dataGridView1.Rows.Add(reader["reference"], reader["etat"], reader["prix"], reader["datesav"], reader["client"], reader["reparabilite"], reader["tag"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors du chargement des données initiales: " + ex.Message);
+            }
         }
 
 
@@ -113,48 +140,56 @@ namespace sav
         {
             string connectionString = "datasource=localhost;port=3306;username=root;password=";
             string insertQuery = "INSERT INTO sav.ticket (reference, etat, prix, datesav, client, reparabilite, tag) VALUES (@Reference, @Etat, @Prix, @DateSav, @Client, @Reparabilite, @Tag)";
-            string selectQuery = "SELECT * FROM sav.ticket ORDER BY reference DESC LIMIT 1"; // Sélectionne le dernier enregistrement inséré
+            string selectQuery = "SELECT * FROM sav.ticket"; // Sélectionne le dernier enregistrement inséré
 
-            using (MySqlConnection con = new MySqlConnection(connectionString))
+            try
             {
-                using (MySqlCommand cmd = new MySqlCommand(insertQuery, con))
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@Reference", txtReference.Text);
-                    cmd.Parameters.AddWithValue("@Etat", cmbEtat.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@Prix", decimal.Parse(txtPrix.Text));
-                    cmd.Parameters.AddWithValue("@DateSav", dateTimePicker1.Value.Date);
-                    cmd.Parameters.AddWithValue("@Client", txtClient.Text);
-                    cmd.Parameters.AddWithValue("@Reparabilite", cmbReparabilite.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@Tag", txtTag.SelectedItem.ToString());
+                    con.Open();
 
-                    try
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, con))
                     {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Ticket créé avec succès.");
+                        cmd.Parameters.AddWithValue("@Reference", txtReference.Text);
+                        cmd.Parameters.AddWithValue("@Etat", cmbEtat.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@Prix", decimal.Parse(txtPrix.Text));
+                        cmd.Parameters.AddWithValue("@DateSav", dateTimePicker1.Value.Date);
+                        cmd.Parameters.AddWithValue("@Client", txtClient.Text);
+                        cmd.Parameters.AddWithValue("@Reparabilite", cmbReparabilite.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@Tag", txtTag.SelectedItem.ToString());
 
-                        // Récupérer les données insérées
-                        using (MySqlCommand selectCmd = new MySqlCommand(selectQuery, con))
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
                         {
-                            using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                            Console.WriteLine("Insertion réussie.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Aucune ligne insérée.");
+                        }
+                    }
+
+                    // Récupérer les données insérées
+                    using (MySqlCommand selectCmd = new MySqlCommand(selectQuery, con))
+                    {
+                        using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                  
-                                    dataGridView1.Rows.Add(reader["reference"], reader["etat"], reader["prix"], reader["datesav"], reader["client"], reader["reparabilite"], reader["tag"]);
-                                }
+                                dataGridView1.Rows.Add(reader["reference"], reader["etat"], reader["prix"], reader["datesav"], reader["client"], reader["reparabilite"], reader["tag"]);
+                                Console.WriteLine("Dernier enregistrement inséré affiché.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Aucun enregistrement trouvé.");
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erreur lors de la création du ticket: " + ex.Message);
-                    }
-                    finally
-                    {
-                        con.Close();
-                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la création du ticket: " + ex.Message);
             }
         }
 
@@ -175,8 +210,7 @@ namespace sav
 
         private void InsertDataFromDataGridView()
         {
-           
+
         }
     }
 }
-
