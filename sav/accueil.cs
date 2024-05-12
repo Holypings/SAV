@@ -24,8 +24,8 @@ namespace sav
             ajtcomptebtn.FlatAppearance.BorderSize = 0;
             connectbtn.FlatStyle = FlatStyle.Flat;
             connectbtn.FlatAppearance.BorderSize = 0;
-            comptebtn.FlatStyle = FlatStyle.Flat;
-            comptebtn.FlatAppearance.BorderSize = 0;
+           
+
             dashbtn.FlatStyle = FlatStyle.Flat;
             dashbtn.FlatAppearance.BorderSize = 0;
 
