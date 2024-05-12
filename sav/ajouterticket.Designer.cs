@@ -37,16 +37,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbEtat = new System.Windows.Forms.ComboBox();
+            this.txtPrix = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.txtClient = new System.Windows.Forms.TextBox();
+            this.cmbReparabilite = new System.Windows.Forms.ComboBox();
+            this.txtTag = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtReference = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,27 +153,27 @@
             this.label4.Text = "Etat";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // comboBox1
+            // cmbEtat
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbEtat.FormattingEnabled = true;
+            this.cmbEtat.Items.AddRange(new object[] {
             "Neuf",
             "Abimé",
             "Cassé",
             "HS"});
-            this.comboBox1.Location = new System.Drawing.Point(252, 256);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(113, 21);
-            this.comboBox1.TabIndex = 38;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbEtat.Location = new System.Drawing.Point(252, 256);
+            this.cmbEtat.Name = "cmbEtat";
+            this.cmbEtat.Size = new System.Drawing.Size(113, 21);
+            this.cmbEtat.TabIndex = 38;
+            this.cmbEtat.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox2
+            // txtPrix
             // 
-            this.textBox2.Location = new System.Drawing.Point(252, 319);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 39;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtPrix.Location = new System.Drawing.Point(252, 319);
+            this.txtPrix.Name = "txtPrix";
+            this.txtPrix.Size = new System.Drawing.Size(206, 20);
+            this.txtPrix.TabIndex = 39;
+            this.txtPrix.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -183,50 +183,39 @@
             this.dateTimePicker1.TabIndex = 40;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // textBox3
+            // txtClient
             // 
-            this.textBox3.Location = new System.Drawing.Point(252, 440);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
-            this.textBox3.TabIndex = 41;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtClient.Location = new System.Drawing.Point(252, 440);
+            this.txtClient.Name = "txtClient";
+            this.txtClient.Size = new System.Drawing.Size(206, 20);
+            this.txtClient.TabIndex = 41;
+            this.txtClient.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // comboBox2
+            // cmbReparabilite
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Lié a la bdd"});
-            this.comboBox2.Location = new System.Drawing.Point(252, 192);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(206, 21);
-            this.comboBox2.TabIndex = 42;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbReparabilite.FormattingEnabled = true;
+            this.cmbReparabilite.Items.AddRange(new object[] {
             "Oui",
             "Non"});
-            this.comboBox3.Location = new System.Drawing.Point(252, 503);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(113, 21);
-            this.comboBox3.TabIndex = 43;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cmbReparabilite.Location = new System.Drawing.Point(252, 503);
+            this.cmbReparabilite.Name = "cmbReparabilite";
+            this.cmbReparabilite.Size = new System.Drawing.Size(113, 21);
+            this.cmbReparabilite.TabIndex = 43;
+            this.cmbReparabilite.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // comboBox4
+            // txtTag
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.txtTag.FormattingEnabled = true;
+            this.txtTag.Items.AddRange(new object[] {
             "En attente",
             "En cours",
             "Terminé",
             "Urgent"});
-            this.comboBox4.Location = new System.Drawing.Point(252, 565);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(206, 21);
-            this.comboBox4.TabIndex = 44;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.txtTag.Location = new System.Drawing.Point(252, 565);
+            this.txtTag.Name = "txtTag";
+            this.txtTag.Size = new System.Drawing.Size(206, 21);
+            this.txtTag.TabIndex = 44;
+            this.txtTag.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -261,21 +250,28 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtReference
+            // 
+            this.txtReference.Location = new System.Drawing.Point(252, 195);
+            this.txtReference.Name = "txtReference";
+            this.txtReference.Size = new System.Drawing.Size(206, 20);
+            this.txtReference.TabIndex = 47;
+            // 
             // ajouterticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(634, 723);
+            this.Controls.Add(this.txtReference);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTag);
+            this.Controls.Add(this.cmbReparabilite);
+            this.Controls.Add(this.txtClient);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtPrix);
+            this.Controls.Add(this.cmbEtat);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -308,14 +304,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmbEtat;
+        private System.Windows.Forms.TextBox txtPrix;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox txtClient;
+        private System.Windows.Forms.ComboBox cmbReparabilite;
+        private System.Windows.Forms.ComboBox txtTag;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtReference;
     }
 }

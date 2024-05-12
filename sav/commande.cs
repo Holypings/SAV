@@ -11,8 +11,11 @@ using MySql.Data.MySqlClient;
 
 namespace sav
 {
+   
+  
     public partial class commande : Form
     {
+        
         public commande()
         {
             InitializeComponent();
@@ -22,10 +25,11 @@ namespace sav
             ajtcomptebtn.FlatAppearance.BorderSize = 0;
             connectbtn.FlatStyle = FlatStyle.Flat;
             connectbtn.FlatAppearance.BorderSize = 0;
-           
             dashbtn.FlatStyle = FlatStyle.Flat;
             dashbtn.FlatAppearance.BorderSize = 0;
+            
         }
+
 
         private void tbsearch_TextChanged(object sender, EventArgs e)
         {
@@ -88,11 +92,6 @@ namespace sav
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -104,5 +103,80 @@ namespace sav
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = "datasource=localhost;port=3306;username=root;password=";
+            string insertQuery = "INSERT INTO sav.ticket (reference, etat, prix, datesav, client, reparabilite, tag) VALUES (@Reference, @Etat, @Prix, @DateSav, @Client, @Reparabilite, @Tag)";
+            string selectQuery = "SELECT * FROM sav.ticket ORDER BY reference DESC LIMIT 1"; // Sélectionne le dernier enregistrement inséré
+
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(insertQuery, con))
+                {
+                    cmd.Parameters.AddWithValue("@Reference", txtReference.Text);
+                    cmd.Parameters.AddWithValue("@Etat", cmbEtat.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Prix", decimal.Parse(txtPrix.Text));
+                    cmd.Parameters.AddWithValue("@DateSav", dateTimePicker1.Value.Date);
+                    cmd.Parameters.AddWithValue("@Client", txtClient.Text);
+                    cmd.Parameters.AddWithValue("@Reparabilite", cmbReparabilite.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Tag", txtTag.SelectedItem.ToString());
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Ticket créé avec succès.");
+
+                        // Récupérer les données insérées
+                        using (MySqlCommand selectCmd = new MySqlCommand(selectQuery, con))
+                        {
+                            using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                  
+                                    dataGridView1.Rows.Add(reader["reference"], reader["etat"], reader["prix"], reader["datesav"], reader["client"], reader["reparabilite"], reader["tag"]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur lors de la création du ticket: " + ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+            }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void InsertDataFromDataGridView()
+        {
+           
+        }
     }
 }
+

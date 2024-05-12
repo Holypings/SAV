@@ -33,7 +33,6 @@
             this.ajtcomptebtn = new System.Windows.Forms.Button();
             this.connectbtn = new System.Windows.Forms.Button();
             this.dashbtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,7 +76,7 @@
             this.commandebtn.Name = "commandebtn";
             this.commandebtn.Size = new System.Drawing.Size(136, 47);
             this.commandebtn.TabIndex = 1;
-            this.commandebtn.Text = "Commandes";
+            this.commandebtn.Text = "Gestion retours";
             this.commandebtn.UseVisualStyleBackColor = false;
             this.commandebtn.Click += new System.EventHandler(this.button1_Click_2);
             // 
@@ -122,17 +121,6 @@
             this.dashbtn.Text = "Accueil";
             this.dashbtn.UseVisualStyleBackColor = false;
             this.dashbtn.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(277, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 43);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Dashboard";
             // 
             // label2
             // 
@@ -422,7 +410,6 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dashbtn);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.connectbtn);
@@ -458,7 +445,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button dashbtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;

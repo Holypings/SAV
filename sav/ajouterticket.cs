@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,12 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace sav
 {
+
+    public delegate void TicketDataHandler(string reference, string etat, decimal prix, DateTime datesav, string client, int reparabilite, string tag);
+
+ 
     public partial class ajouterticket : Form
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+       
         public ajouterticket()
         {
             InitializeComponent();
@@ -36,10 +43,43 @@ namespace sav
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string connectionString = "datasource=localhost;port=3306;username=root;password=";
+            string query = "INSERT INTO sav.ticket (reference, etat, prix, datesav, client, reparabilite, tag) VALUES (@Reference, @Etat, @Prix, @DateSav, @Client, @Reparabilite, @Tag)";
+            
 
+
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Reference", txtReference.Text);
+                    cmd.Parameters.AddWithValue("@Etat", cmbEtat.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Prix", decimal.Parse(txtPrix.Text));
+                    cmd.Parameters.AddWithValue("@DateSav", dateTimePicker1.Value.Date);
+                    cmd.Parameters.AddWithValue("@Client", txtClient.Text);
+                    cmd.Parameters.AddWithValue("@Reparabilite", cmbReparabilite.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Tag", txtTag.Text);
+                    
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Ticket créé avec succès.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur lors de la création du ticket: " + ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+            }
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+            private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
