@@ -32,8 +32,9 @@ namespace sav
             commandDatabase.Parameters.AddWithValue("@Mail", txtEmail.Text);
             commandDatabase.Parameters.AddWithValue("@Pseudo", txtUsername.Text);
 
-            // Suppression du hachage du mot de passe
-            commandDatabase.Parameters.AddWithValue("@mdp", txtPasword.Text);
+            // Hachage du mot de passe avant l'insertion
+            string hashedPassword = HashPassword(txtPasword.Text);
+            commandDatabase.Parameters.AddWithValue("@mdp", hashedPassword);
 
             commandDatabase.CommandTimeout = 60;
 
@@ -41,7 +42,6 @@ namespace sav
             {
                 commandDatabase.ExecuteNonQuery();
                 MessageBox.Show("Compte créé avec succès!");
-                // Afficher le formulaire d'accueil après l'inscription réussie
                 this.Hide();
                 accueil f1 = new accueil();
                 f1.Show();
@@ -54,8 +54,22 @@ namespace sav
             {
                 connection.Close();
             }
-        
-    }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+
+            }
+        }
 
         private bool CheckIfEmailExists(string email)
         {
