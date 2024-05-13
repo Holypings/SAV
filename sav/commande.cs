@@ -122,9 +122,7 @@ namespace sav
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ajouterticket f3 = new ajouterticket();
-            f3.Show();
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

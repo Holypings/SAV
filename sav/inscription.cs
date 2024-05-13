@@ -4,16 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 
 namespace sav
 {
     public partial class inscription : Form
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+
         public inscription()
         {
             InitializeComponent();
@@ -21,43 +24,38 @@ namespace sav
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Votre code existant pour cacher le formulaire et afficher le formulaire d'accueil
-            this.Hide();
-            accueil f1 = new accueil();
-            f1.Show();
+            connection.Open();
+            string iquery = "INSERT INTO sav.user(`ID_USER`,`nom`,`prenom`,`mail`,`pseudo`, `mdp`) VALUES (NULL, @Nom, @Prenom, @Mail, @Pseudo, @mdp)";
+            MySqlCommand commandDatabase = new MySqlCommand(iquery, connection);
+            commandDatabase.Parameters.AddWithValue("@Nom", txtFName.Text);
+            commandDatabase.Parameters.AddWithValue("@Prenom", txtLName.Text);
+            commandDatabase.Parameters.AddWithValue("@Mail", txtEmail.Text);
+            commandDatabase.Parameters.AddWithValue("@Pseudo", txtUsername.Text);
 
-            // Votre code existant pour valider le formulaire
-            if (!this.txtEmail.Text.Contains('@') || !this.txtEmail.Text.Contains('.'))
+            // Suppression du hachage du mot de passe
+            commandDatabase.Parameters.AddWithValue("@mdp", txtPasword.Text);
+
+            commandDatabase.CommandTimeout = 60;
+
+            try
             {
-                MessageBox.Show("Entrez un mail valide", "Email invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                commandDatabase.ExecuteNonQuery();
+                MessageBox.Show("Compte créé avec succès!");
+                // Afficher le formulaire d'accueil après l'inscription réussie
+                this.Hide();
+                accueil f1 = new accueil();
+                f1.Show();
             }
-
-            if (string.IsNullOrEmpty(txtFName.Text) || string.IsNullOrEmpty(txtLName.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            catch (Exception ex)
             {
-                MessageBox.Show("Veuillez remplir le formulaire", "Erreur");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            // Vérifier si l'email existe déjà
-            bool emailExists = CheckIfEmailExists(txtEmail.Text);
-            if (emailExists)
+            finally
             {
-                MessageBox.Show("Email déjà existant", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                connection.Close();
             }
-
-            // Vérifier si le pseudo existe déjà
-            bool pseudoExists = CheckIfPseudoExists(txtUsername.Text);
-            if (pseudoExists)
-            {
-                MessageBox.Show("Pseudo déjà existant", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Si aucun des deux n'existe, procéder à l'insertion
-            InsertNewUser();
-        }
+        
+    }
 
         private bool CheckIfEmailExists(string email)
         {
@@ -98,13 +96,15 @@ namespace sav
             commandDatabase.Parameters.AddWithValue("@Pseudo", txtUsername.Text);
             commandDatabase.Parameters.AddWithValue("@mdp", txtPasword.Text);
             commandDatabase.CommandTimeout = 60;
-            Console.WriteLine("Mot de passe à insérer : " + txtPasword.Text);
-
 
             try
             {
                 commandDatabase.ExecuteNonQuery();
-                MessageBox.Show("Compte créé avec succès !");
+                MessageBox.Show("Compte créé avec succès!");
+                // Afficher le formulaire d'accueil après l'inscription réussie
+                this.Hide();
+                accueil f1 = new accueil();
+                f1.Show();
             }
             catch (Exception ex)
             {
@@ -120,7 +120,9 @@ namespace sav
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+            this.Hide();
+            accueil f1 = new accueil();
+            f1.Show();
         }
 
         private void inscription_Load(object sender, EventArgs e)

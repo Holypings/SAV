@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,49 +15,65 @@ namespace sav
     public partial class connexion : Form
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+
         public connexion()
         {
             InitializeComponent();
         }
 
+        private string HashPassword(string password)
+        {
+            const int iterations = 350000;
+            const int keySize = 64;
+            HashAlgorithmName hashAlgorithm = HashAlgorithmName.SHA256;
+
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                byte[] salt = new byte[keySize];
+                rng.GetBytes(salt);
+
+                var deriveBytes = new Rfc2898DeriveBytes(password, salt, iterations, hashAlgorithm);
+                byte[] hash = deriveBytes.GetBytes(keySize);
+
+                return Convert.ToBase64String(hash);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            accueil f1 = new accueil();
-            f1.Show();
-
-            string pseudo = txtPseudo.Text;
-            string password = txtPassword.Text;
-
-            if (string.IsNullOrEmpty(pseudo) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(txtPseudo.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Veuillez entrer votre pseudo et votre mot de passe.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            // Vérifiez si l'utilisateur existe dans la base de données
+            bool userExists = CheckIfUserExists(txtPseudo.Text, txtPassword.Text);
+            if (!userExists)
+            {
+                MessageBox.Show("Identifiants incorrects.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Si l'utilisateur existe, affichez le formulaire d'accueil
+            this.Hide();
+            accueil f1 = new accueil();
+            f1.Show();
+        }
+
+        private bool CheckIfUserExists(string username, string password)
+        {
+            bool exists = false;
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM sav.user WHERE pseudo = @Pseudo AND mdp = @Password", connection);
-            cmd.Parameters.AddWithValue("@Pseudo", pseudo);
-            cmd.Parameters.AddWithValue("@Password", password);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows)
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM sav.user WHERE pseudo = @Pseudo AND mdp = @Mdp", connection);
+            cmd.Parameters.AddWithValue("@Pseudo", username);
+            cmd.Parameters.AddWithValue("@Mdp", password); // Assurez-vous que le mot de passe est haché avant de le comparer
+            using (var dr = cmd.ExecuteReader())
             {
-                // Les identifiants sont valides, rediriger vers le formulaire principal 'accueil'
-                accueil mainForm = new accueil();
-                mainForm.Show();
-                this.Hide();
+                exists = dr.HasRows;
             }
-            else
-            {
-                // Les identifiants sont invalides, afficher un message d'erreur
-                MessageBox.Show("Pseudo ou mot de passe incorrect.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
             connection.Close();
-
-
-
+            return exists;
         }
 
         private void connexion_Load(object sender, EventArgs e)

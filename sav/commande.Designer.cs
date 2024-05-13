@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtReference = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTag = new System.Windows.Forms.ComboBox();
             this.cmbReparabilite = new System.Windows.Forms.ComboBox();
@@ -169,25 +168,15 @@
             // 
             // txtReference
             // 
-            this.txtReference.Location = new System.Drawing.Point(430, 181);
+            this.txtReference.Location = new System.Drawing.Point(429, 124);
             this.txtReference.Name = "txtReference";
             this.txtReference.Size = new System.Drawing.Size(206, 20);
             this.txtReference.TabIndex = 63;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(430, 642);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
-            this.button2.TabIndex = 62;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(283, 642);
+            this.button1.Location = new System.Drawing.Point(380, 583);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 41);
             this.button1.TabIndex = 61;
@@ -203,7 +192,7 @@
             "En cours",
             "Terminé",
             "Urgent"});
-            this.txtTag.Location = new System.Drawing.Point(430, 551);
+            this.txtTag.Location = new System.Drawing.Point(429, 494);
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(206, 21);
             this.txtTag.TabIndex = 60;
@@ -214,28 +203,28 @@
             this.cmbReparabilite.Items.AddRange(new object[] {
             "Oui",
             "Non"});
-            this.cmbReparabilite.Location = new System.Drawing.Point(430, 489);
+            this.cmbReparabilite.Location = new System.Drawing.Point(429, 432);
             this.cmbReparabilite.Name = "cmbReparabilite";
             this.cmbReparabilite.Size = new System.Drawing.Size(206, 21);
             this.cmbReparabilite.TabIndex = 59;
             // 
             // txtClient
             // 
-            this.txtClient.Location = new System.Drawing.Point(430, 426);
+            this.txtClient.Location = new System.Drawing.Point(429, 369);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(206, 20);
             this.txtClient.TabIndex = 58;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(430, 366);
+            this.dateTimePicker1.Location = new System.Drawing.Point(429, 309);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(206, 20);
             this.dateTimePicker1.TabIndex = 57;
             // 
             // txtPrix
             // 
-            this.txtPrix.Location = new System.Drawing.Point(430, 305);
+            this.txtPrix.Location = new System.Drawing.Point(429, 248);
             this.txtPrix.Name = "txtPrix";
             this.txtPrix.Size = new System.Drawing.Size(206, 20);
             this.txtPrix.TabIndex = 56;
@@ -248,7 +237,7 @@
             "Abimé",
             "Cassé",
             "HS"});
-            this.cmbEtat.Location = new System.Drawing.Point(430, 242);
+            this.cmbEtat.Location = new System.Drawing.Point(429, 185);
             this.cmbEtat.Name = "cmbEtat";
             this.cmbEtat.Size = new System.Drawing.Size(206, 21);
             this.cmbEtat.TabIndex = 55;
@@ -259,7 +248,7 @@
             this.label12.BackColor = System.Drawing.SystemColors.Control;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(367, 551);
+            this.label12.Location = new System.Drawing.Point(366, 494);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 23);
             this.label12.TabIndex = 54;
@@ -271,7 +260,7 @@
             this.label13.BackColor = System.Drawing.SystemColors.Control;
             this.label13.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(306, 489);
+            this.label13.Location = new System.Drawing.Point(305, 432);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 23);
             this.label13.TabIndex = 53;
@@ -283,7 +272,7 @@
             this.label14.BackColor = System.Drawing.SystemColors.Control;
             this.label14.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(341, 178);
+            this.label14.Location = new System.Drawing.Point(340, 121);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 23);
             this.label14.TabIndex = 52;
@@ -295,7 +284,7 @@
             this.label15.BackColor = System.Drawing.SystemColors.Control;
             this.label15.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(353, 426);
+            this.label15.Location = new System.Drawing.Point(352, 369);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 23);
             this.label15.TabIndex = 51;
@@ -307,7 +296,7 @@
             this.label16.BackColor = System.Drawing.SystemColors.Control;
             this.label16.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(289, 363);
+            this.label16.Location = new System.Drawing.Point(288, 306);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(117, 23);
             this.label16.TabIndex = 50;
@@ -319,7 +308,7 @@
             this.label17.BackColor = System.Drawing.SystemColors.Control;
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(367, 305);
+            this.label17.Location = new System.Drawing.Point(366, 248);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 23);
             this.label17.TabIndex = 49;
@@ -331,7 +320,7 @@
             this.label18.BackColor = System.Drawing.SystemColors.Control;
             this.label18.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(367, 245);
+            this.label18.Location = new System.Drawing.Point(366, 188);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(39, 23);
             this.label18.TabIndex = 48;
@@ -340,7 +329,7 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(573, 642);
+            this.btnSupprimer.Location = new System.Drawing.Point(538, 583);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(121, 41);
             this.btnSupprimer.TabIndex = 65;
@@ -361,9 +350,9 @@
             this.Column4,
             this.Column5});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(808, 165);
+            this.dataGridView1.Location = new System.Drawing.Point(807, 108);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 491);
             this.dataGridView1.TabIndex = 67;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -407,11 +396,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1890, 713);
+            this.ClientSize = new System.Drawing.Size(1615, 713);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.txtReference);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTag);
             this.Controls.Add(this.cmbReparabilite);
@@ -459,7 +447,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtReference;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox txtTag;
         private System.Windows.Forms.ComboBox cmbReparabilite;
