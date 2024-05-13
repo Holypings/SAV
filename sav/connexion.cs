@@ -19,25 +19,10 @@ namespace sav
         public connexion()
         {
             InitializeComponent();
+
         }
 
-        private string HashPassword(string password)
-        {
-            const int iterations = 350000;
-            const int keySize = 64;
-            HashAlgorithmName hashAlgorithm = HashAlgorithmName.SHA256;
-
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                byte[] salt = new byte[keySize];
-                rng.GetBytes(salt);
-
-                var deriveBytes = new Rfc2898DeriveBytes(password, salt, iterations, hashAlgorithm);
-                byte[] hash = deriveBytes.GetBytes(keySize);
-
-                return Convert.ToBase64String(hash);
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
