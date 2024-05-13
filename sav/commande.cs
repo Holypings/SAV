@@ -28,6 +28,7 @@ namespace sav
             connectbtn.FlatAppearance.BorderSize = 0;
             dashbtn.FlatStyle = FlatStyle.Flat;
             dashbtn.FlatAppearance.BorderSize = 0;
+            btnSupprimer.Click += btnSupprimer_Click;
 
         }
 
@@ -212,5 +213,24 @@ namespace sav
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+                dataGridView1.Rows.Remove(selectedRow); // Supprime la ligne sélectionnée
+                MessageBox.Show("Ligne supprimée avec succès.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Aucune ligne sélectionnée pour la suppression.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

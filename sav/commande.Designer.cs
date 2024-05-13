@@ -53,7 +53,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Produit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -337,15 +337,16 @@
             this.label18.TabIndex = 48;
             this.label18.Text = "Etat";
             // 
-            // button3
+            // btnSupprimer
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(573, 642);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 41);
-            this.button3.TabIndex = 65;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.Location = new System.Drawing.Point(573, 642);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(121, 41);
+            this.btnSupprimer.TabIndex = 65;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
@@ -408,7 +409,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1890, 713);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.txtReference);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -473,7 +474,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Produit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Etat;
